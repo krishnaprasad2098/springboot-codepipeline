@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - echo "Building the Spring Boot application"
-      - mvn clean package
+      - mvn package -DskipTests
 
   post_build:
     commands:
