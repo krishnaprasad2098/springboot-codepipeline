@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - echo "Installing Maven..."
+      - mvn --version
+
+  pre_build:
+    commands:
+      - echo "Running pre-build steps"
+      - mvn clean
+
+  build:
+    commands:
+      - echo "Building the Spring Boot application"
+      - mvn clean package
+
+  post_build:
+    commands:
+      - echo "Build completed successfully"
+      - cp target/*.war app.war
+      - echo "Artifact copied"
+artifacts:
+  files:
+    - app.war
+  discard-paths: yes
