@@ -6,6 +6,8 @@ phases:
       java: corretto21
     commands:
       - echo "Installing Maven..."
+      - apt-get update
+      - apt-get install -y zip
       - mvn --version
 
   pre_build:
@@ -20,10 +22,10 @@ phases:
 
   post_build:
     commands:
-      - echo "Build completed successfully"
       - cp target/*.war app.war
-      - echo "Artifact copied"
+      - zip app.zip app.war
+      - echo "Artifact zipped as app.zip"
 artifacts:
   files:
-    - app.war
+    - app.zip
   discard-paths: yes
