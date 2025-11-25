@@ -22,7 +22,12 @@ phases:
 
   post_build:
     commands:
+      - echo "Checking target folder"
+      - ls -l target
+      - echo "Copying WAR"
       - cp target/*.war .
+      - echo "Listing root folder"
+      - ls -l
 artifacts:
   files:
     - ".war"
