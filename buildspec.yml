@@ -30,5 +30,5 @@ phases:
       - ls -l
 artifacts:
   files:
-    - ".war"
+    - "*.war"
   discard-paths: yes
