@@ -22,10 +22,8 @@ phases:
 
   post_build:
     commands:
-      - cp target/*.war app.war
-      - zip app.zip app.war
-      - echo "Artifact zipped as app.zip"
+      - cp target/*.war .
 artifacts:
   files:
-    - app.zip
+    - ".war"
   discard-paths: yes
