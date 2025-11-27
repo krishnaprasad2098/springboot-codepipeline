@@ -26,6 +26,7 @@ phases:
       - ls -l target
       - echo "Copying WAR"
       - cp target/*.war .
+      - mv sredemo-0.0.1-SNAPSHOT.war sredemo.war
       - echo "Listing root folder"
       - ls -l
 artifacts:
